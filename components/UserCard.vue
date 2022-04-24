@@ -1,10 +1,9 @@
 <template>
   <section>
     <aside>
-      <span>{{ user.id }}</span>
-      <span><fa :icon="['fas', 'xmark']" /></span>
+      <h2>{{ user.firstname }}</h2>
+      <span><fa class="delete-button" :icon="['fas', 'xmark']" /></span>
     </aside>
-    <h2>{{ user.firstname }}</h2>
     <p>{{ user.email }}</p>
   </section>
 </template>
@@ -46,7 +45,6 @@ section aside {
 
 section h2 {
   margin: 0;
-  margin-top: 10px;
 
   font-size: 20px;
   font-weight: normal;
@@ -56,6 +54,15 @@ section p {
   margin: 0;
   font-size: 16px;
   color: rgb(100, 100, 100);
+}
+
+.delete-button {
+  transition: 0.3s;
+}
+
+.delete-button:hover {
+  cursor: pointer;
+  transform: rotate(6deg);
 }
 
 @media screen and (max-width: 790px) {

@@ -40,6 +40,18 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/axios
     "@nuxtjs/axios",
+    [
+      "nuxt-fontawesome",
+      {
+        component: "fa", //customize component name
+        imports: [
+          {
+            set: "@fortawesome/free-solid-svg-icons",
+            icons: ["faXmark"],
+          },
+        ],
+      },
+    ],
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios

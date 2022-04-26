@@ -2,7 +2,12 @@
   <section>
     <aside>
       <h2>{{ user.firstname }}</h2>
-      <span><fa class="delete-button" :icon="['fas', 'xmark']" /></span>
+      <span
+        ><fa
+          @click="deleteUser(user.id)"
+          class="delete-button"
+          :icon="['fas', 'trash']"
+      /></span>
     </aside>
     <p>{{ user.email }}</p>
   </section>
@@ -15,6 +20,9 @@ export default {
   name: "UserCard",
   props: {
     user: Object,
+  },
+  methods: {
+    ...mapActions(["deleteUser"]),
   },
 };
 </script>
@@ -32,6 +40,11 @@ section {
   padding: 20px;
   box-shadow: 15px 15px 27px #e1e1e3, -15px -15px 27px #ffffff;
   border-radius: 5px;
+
+  transition: 0.3s;
+  transform: translateY(-5px);
+  opacity: 0;
+  animation: fadeIn 0.5s ease forwards;
 }
 
 section aside {
@@ -58,11 +71,13 @@ section p {
 
 .delete-button {
   transition: 0.3s;
+  color: rgb(200, 200, 200);
 }
 
 .delete-button:hover {
   cursor: pointer;
   transform: rotate(6deg);
+  color: #d90429;
 }
 
 @media screen and (max-width: 790px) {

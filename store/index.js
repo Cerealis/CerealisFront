@@ -55,7 +55,7 @@ export const actions = {
     context.dispatch("changeStatus", "loading");
 
     this.$axios
-      .get("http://localhost:8080/getinfos", {
+      .get("http://localhost:8080/getusers", {
         headers: {
           "Access-Control-Allow-Origin": "*",
         },

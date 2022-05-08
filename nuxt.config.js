@@ -12,7 +12,7 @@ export default {
       { name: "format-detection", content: "telephone=no" },
     ],
     link: [
-      { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
+      { rel: "icon", type: "image/x-icon", href: "/favicon.png" },
       {
         rel: "preconnect",
         href: "https://fonts.gstatic.com",
@@ -47,7 +47,7 @@ export default {
         imports: [
           {
             set: "@fortawesome/free-solid-svg-icons",
-            icons: ["faXmark", "faTrash"],
+            icons: ["faXmark", "faTrash", "faWheatAwn"],
           },
         ],
       },

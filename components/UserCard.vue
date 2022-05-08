@@ -35,7 +35,7 @@ section {
   align-items: flex-start;
   align-content: center;
 
-  width: 300px;
+  width: 325px;
 
   padding: 20px;
   box-shadow: 15px 15px 27px #e1e1e3, -15px -15px 27px #ffffff;
@@ -77,7 +77,7 @@ section p {
 .delete-button:hover {
   cursor: pointer;
   transform: rotate(6deg);
-  color: #d90429;
+  color: #f94144;
 }
 
 @media screen and (max-width: 790px) {

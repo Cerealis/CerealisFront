@@ -1,12 +1,17 @@
 <template>
   <div>
-    <h1>Cerialis Front</h1>
+    <nav></nav>
+    <header>
+      <fa class="wheat-icon" :icon="['fas', 'wheat-awn']" />
+      <h1>Cerialis</h1>
+    </header>
+
     <article class="cards" v-if="getApiResponse">
       <UserCard
         v-for="(user, i) in getApiResponse"
         :key="user.id"
         :user="user"
-        :style="{ animationDelay: `${0.1 * i}s` }"
+        :style="{ animationDelay: `${0.1 * i + 0.5}s` }"
       />
     </article>
     <article class="container loading" v-if="getStatus == 'loading'">
@@ -41,6 +46,49 @@ export default {
 </script>
 
 <style scoped>
+nav {
+  background: url("~assets/img/wheat.jpg");
+  /* Photo prise sur https://pixabay.com/fr/photos/bl%c3%a9-sur-le-terrain-des-c%c3%a9r%c3%a9ales-3241114/ */
+  height: 300px;
+  width: 100%;
+  border-radius: 5px;
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  transition: 0.3s;
+  transform: translateY(-5px);
+  opacity: 0;
+  animation: fadeIn 0.5s ease forwards;
+
+  margin-top: 20px;
+}
+
+header {
+  transition: 0.3s;
+  opacity: 0;
+  transform: translateX(-5px);
+  animation: fadeInWheat 0.5s ease forwards;
+  animation-delay: 0.3s;
+}
+
+header h1 {
+  margin-top: 10px;
+  color: rgb(50, 50, 50);
+}
+
+header .wheat-icon {
+  font-size: 40px;
+  margin-top: -55px;
+  border-top-right-radius: 50px;
+  padding-top: 25px;
+  padding-right: 25px;
+
+  background: white;
+  color: #f9c74f;
+}
+
 .cards {
   margin-top: 50px;
   margin-bottom: 25px;
@@ -86,7 +134,7 @@ export default {
 
 .error .error-icon {
   margin-top: 15px;
-  color: #d90429;
+  color: #f94144;
   font-size: 25px;
 }
 </style>

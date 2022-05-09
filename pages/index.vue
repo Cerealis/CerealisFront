@@ -3,8 +3,9 @@
     <nav></nav>
     <header>
       <fa class="wheat-icon" :icon="['fas', 'wheat-awn']" />
-      <h1>Cerialis</h1>
+      <h1>Cerealis</h1>
     </header>
+    Envi
 
     <article class="cards" v-if="getApiResponse">
       <UserCard

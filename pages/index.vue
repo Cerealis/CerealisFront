@@ -5,8 +5,6 @@
       <fa class="wheat-icon" :icon="['fas', 'wheat-awn']" />
       <h1>Cerealis</h1>
     </header>
-    Envi
-
     <article class="cards" v-if="getApiResponse">
       <UserCard
         v-for="(user, i) in getApiResponse"

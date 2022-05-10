@@ -36,7 +36,7 @@ export const actions = {
   getHello(context) {
     context.dispatch("changeStatus", "loading");
     this.$axios
-      .get("http://localhost:8080/", {
+      .get(`${this.$axios.defaults.baseURL}`, {
         headers: {
           "Access-Control-Allow-Origin": "*",
         },
@@ -55,7 +55,7 @@ export const actions = {
     context.dispatch("changeStatus", "loading");
 
     this.$axios
-      .get("http://localhost:8080/getusers", {
+      .get(`${this.$axios.defaults.baseURL}getusers`, {
         headers: {
           "Access-Control-Allow-Origin": "*",
         },
@@ -73,7 +73,7 @@ export const actions = {
   deleteUser(context, id) {
     context.dispatch("changeStatus", "loading");
     this.$axios
-      .get(`http://localhost:8080/deleteuser?id=${id}`, {
+      .get(`${this.$axios.defaults.baseURL}deleteuser?id=${id}`, {
         headers: {
           "Access-Control-Allow-Origin": "*",
         },

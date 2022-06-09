@@ -3,7 +3,10 @@
     <nav></nav>
     <header>
       <fa class="wheat-icon" :icon="['fas', 'wheat-awn']" />
-      <h1>Cerealis</h1>
+      <section>
+        <h1>Cerealis</h1>
+        <ExportButton v-if="getApiResponse" :users="getApiResponse" />
+      </section>
     </header>
     <article class="cards" v-if="getApiResponse">
       <UserCard
@@ -72,7 +75,7 @@ header {
   animation-delay: 0.3s;
 }
 
-header h1 {
+header section h1 {
   margin-top: 10px;
   color: rgb(50, 50, 50);
 }
@@ -88,8 +91,16 @@ header .wheat-icon {
   color: #f9c74f;
 }
 
+header section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  align-content: center;
+}
+
 .cards {
-  margin-top: 50px;
+  margin-top: 20px;
   margin-bottom: 25px;
 
   display: flex;
